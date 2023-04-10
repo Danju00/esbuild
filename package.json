@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "esbuild src/index.tsx --bundle --minify --sourcemap --outfile=public/bundle.js",
+    "deploy": "gh-pages -d dist",
     "build:dev": "node esbuild.dev.js",
-    "start": "node esbuild.dev.js -w",
+    "start": "node esbuild.config.js -w",
     "open": "start public/index.html"
   },
   "keywords": [],
@@ -15,7 +16,8 @@
   "devDependencies": {
     "esbuild": "^0.17.15",
     "esbuild-serve": "^1.0.1",
-    "esbuild-server": "^0.1.2"
+    "esbuild-server": "^0.1.2",
+    "gh-pages": "^5.0.0"
   },
   "dependencies": {
     "@types/react": "^18.0.33",
@@ -23,5 +25,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^5.0.4"
-  }
+  },
+  "type": "module"
 }
